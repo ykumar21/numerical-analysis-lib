@@ -1,6 +1,6 @@
 #include <iostream>
 
-class LagrangeInterpolation {
+class LagrangeInterp {
 private:
   double *basis; // lagrange basis functions
   size_t N;      // number of points
@@ -8,17 +8,17 @@ private:
   double *y;
 
 public:
-  LagrangeInterpolation(size_t, double *, double *);
+  LagrangeInterp(size_t, double *, double *);
   double *eval(double *, size_t);
 };
 
-LagrangeInterpolation::LagrangeInterpolation(size_t N, double *x, double *y) {
+LagrangeInterp::LagrangeInterp(size_t N, double *x, double *y) {
   this->N = N;
   this->x = (double *)malloc(N * sizeof(double));
   this->y = (double *)malloc(N * sizeof(double));
 }
 
-double *LagrangeInterpolation::eval(double *x_test, size_t sz) {
+double *LagrangeInterp::eval(double *x_test, size_t sz) {
   // compute the basis
   this->basis = (double *)malloc(N * sizeof(double));
   double *fx = (double *)malloc(N * sizeof(double));
@@ -51,7 +51,7 @@ void *driver(void *args) {
     printf("x%d, y%d =", i, i);
     std::cin >> x[i] >> y[i];
   }
-  LagrangeInterpolation li(N, x, y);
+  LagrangeInterp li(N, x, y);
   double *f = li.eval(x, N);
   return nullptr;
 }
