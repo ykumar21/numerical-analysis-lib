@@ -1,7 +1,5 @@
 #include <iostream>
 
-#define DEBUG 1 
-
 class LagrangeInterp {
 private:
   double *basis; // lagrange basis functions
