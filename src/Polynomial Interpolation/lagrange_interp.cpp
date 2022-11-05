@@ -1,5 +1,7 @@
 #include <iostream>
 
+#define DEBUG 1 
+
 class LagrangeInterp {
 private:
   double *basis; // lagrange basis functions
@@ -39,6 +41,8 @@ double *LagrangeInterp::eval(double *x_test, size_t sz) {
   return fx;
 }
 
+
+#ifdef DEBUG
 void *driver(void *args) {
   size_t N;
   double *x, *y;
@@ -57,3 +61,4 @@ void *driver(void *args) {
 }
 
 int main(int argc, char **argv) { driver(nullptr); }
+#endif 
