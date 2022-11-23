@@ -14,6 +14,7 @@ public:
   Matrix(size_t, size_t);
   T get(size_t, size_t);
   void *put(size_t, size_t, T);
+  Matrix<T> transpose();
 };
 
 template <typename T> Matrix<T>::Matrix(size_t M, size_t N) {
@@ -30,5 +31,7 @@ template <typename T> void *Matrix<T>::put(size_t row, size_t col, T el) {
   matrix[row * N + col] = el;
   return nullptr;
 }
+
+template <typename T> Matrix<T> Matrix<T>::transpose() { return nullptr; }
 
 #endif
