@@ -3,8 +3,6 @@
 #include <semaphore.h>
 #include <vector>
 
-#define DEBUG
-
 struct Args {
   std::vector<unsigned int> i; /* index of points */
 };
