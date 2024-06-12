@@ -3,8 +3,6 @@
 
 #include "includes/rk2sys.h"
 
-#define DEBUG
-
 /* y'(x) = f(x,y) */
 double rk2sys::f(double x, double y) {
   return (3 * x * x + 4 * x + 2) / (2 * (y - 1));
